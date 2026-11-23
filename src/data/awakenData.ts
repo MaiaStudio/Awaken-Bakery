@@ -94,7 +94,7 @@ export const AWAKEN_BUSINESS = {
     ship: "https://shop.awakenbg.com/products/Nationwide-Shipping-c200230531",
     appStore: "https://apps.apple.com/us/app/awaken-bakery/id6483935111",
     googlePlay: "https://play.google.com/store/apps/details?id=gng.gonogomo.gonogo.mobileordering.com.awakenbakery",
-    googleMaps: "https://www.google.com/maps/place/Awaken+Bakery+%7C+Always+Gluten+Free/@36.9948943,-86.4424531,17z",
+    googleMaps: "https://www.google.com/maps/place/Awaken+Bakery+%7C+Always+Gluten+Free/@36.9948943,-86.4424531,17z/data=!3m1!4b1!4m6!3m5!1s0x685c171fb4260735:0x96e4eacb900bbdb4!8m2!3d36.9948943!4d-86.4424531!16s%2Fg%2F11sg6dw7w5",
     googleReview: "https://g.page/r/CbS9C5DL6uSWEAI/review",
     findMeGf: "https://www.findmeglutenfree.com/biz/awaken-bakery/5308488136392704",
     yelp: "https://www.yelp.com/biz/awaken-bakery-bowling-green",
