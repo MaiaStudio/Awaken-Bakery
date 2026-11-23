@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: "Apfel Grotezk";
-  src: url("/fonts/ApfelGrotezk-Regular.woff2") format("woff2");
+  src: url("/awaken/fonts/ApfelGrotezk-Regular.woff2") format("woff2");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -10,7 +10,7 @@
 
 @font-face {
   font-family: "Apfel Grotezk";
-  src: url("/fonts/ApfelGrotezk-Mittel.woff2") format("woff2");
+  src: url("/awaken/fonts/ApfelGrotezk-Mittel.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -18,7 +18,7 @@
 
 @font-face {
   font-family: "Apfel Grotezk";
-  src: url("/fonts/ApfelGrotezk-Fett.woff2") format("woff2");
+  src: url("/awaken/fonts/ApfelGrotezk-Fett.woff2") format("woff2");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -26,7 +26,7 @@
 
 @font-face {
   font-family: "Apfel Grotezk";
-  src: url("/fonts/ApfelGrotezk-Satt.woff2") format("woff2");
+  src: url("/awaken/fonts/ApfelGrotezk-Satt.woff2") format("woff2");
   font-weight: 800;
   font-style: normal;
   font-display: swap;
@@ -35,7 +35,7 @@
 :root {
   --pink: #c28b8b;
   --beige: #fcebd6;
-  --paper-texture: url("/images/paper-texture.webp");
+  --paper-texture: url("/awaken/images/paper-texture.webp");
   --blue: #c28b8b;
   --dark: #4f515e;
   --surface: #fff7ec;
@@ -915,8 +915,8 @@ header.Site_Header.Filled {
 }
 
 .Hero_Float_Inner:hover {
-  -webkit-mask: url("/bite-mask.svg") center/contain no-repeat;
-  mask: url("/bite-mask.svg") center/contain no-repeat;
+  -webkit-mask: url("/awaken/bite-mask.svg") center/contain no-repeat;
+  mask: url("/awaken/bite-mask.svg") center/contain no-repeat;
   transform: rotate(8deg) scale(0.92);
 }
 
@@ -1312,8 +1312,8 @@ header.Site_Header.Filled {
 }
 
 .Quantity_Selector_Button:hover {
-  -webkit-mask: url("/bite-mask.svg") center/contain no-repeat;
-  mask: url("/bite-mask.svg") center/contain no-repeat;
+  -webkit-mask: url("/awaken/bite-mask.svg") center/contain no-repeat;
+  mask: url("/awaken/bite-mask.svg") center/contain no-repeat;
   transform: rotate(15deg);
 }
 

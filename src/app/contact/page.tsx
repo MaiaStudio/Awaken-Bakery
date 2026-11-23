@@ -132,7 +132,7 @@ export default function ContactPage() {
 
         <div className="Contact_Form_Image_Container">
           <img
-            src="/images/storefront.webp"
+            src="/awaken/images/storefront.webp"
             alt="Awaken Bakery storefront in downtown Bowling Green, KY"
             className="w-full h-full object-cover"
           />

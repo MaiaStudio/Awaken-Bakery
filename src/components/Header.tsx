@@ -67,10 +67,10 @@ export function Header() {
       >
         <TransitionLink href="/" className="site_logo" ariaLabel="Awaken Bakery Home">
           <span className={`Logo_Dark ${filled || isSearchOpen ? "Shown" : ""}`} aria-hidden="true">
-            <img src="/images/logo-awaken.png" alt="" />
+            <img src="/awaken/images/logo-awaken.png" alt="" />
           </span>
           <span className={`Logo_Light ${!filled && !isSearchOpen ? "Shown" : ""}`} aria-hidden="true">
-            <img src="/images/logo-awaken.png" alt="" />
+            <img src="/awaken/images/logo-awaken.png" alt="" />
           </span>
         </TransitionLink>
 
@@ -254,7 +254,7 @@ export function Header() {
       >
         <div className="flex items-center justify-between">
           <img
-            src="/images/logo-awaken.png"
+            src="/awaken/images/logo-awaken.png"
             alt="Awaken Bakery — Always Gluten Free"
             loading="lazy"
             className="h-12 w-auto object-contain brightness-0 invert"
@@ -308,13 +308,13 @@ export function Header() {
 
           <div className="Drawer_Changing_Images">
             <div className="Fluid">
-              <img src="/images/funfetti-cake.webp" alt="Awaken Funfetti Cake" loading="lazy" />
+              <img src="/awaken/images/funfetti-cake.webp" alt="Awaken Funfetti Cake" loading="lazy" />
             </div>
             <div className="Fluid">
-              <img src="/images/bagel-scene.webp" alt="Awaken Gluten-Free Bagel" loading="lazy" />
+              <img src="/awaken/images/bagel-scene.webp" alt="Awaken Gluten-Free Bagel" loading="lazy" />
             </div>
             <div className="Fluid">
-              <img src="/images/artisan-bread.webp" alt="Awaken Artisan Bread" loading="lazy" />
+              <img src="/awaken/images/artisan-bread.webp" alt="Awaken Artisan Bread" loading="lazy" />
             </div>
           </div>
         </div>

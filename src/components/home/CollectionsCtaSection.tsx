@@ -76,7 +76,7 @@ export function CollectionsCtaSection() {
           <div className="Window_Image_Limit">
             <div className="Window_Image_Container Fluid">
               <img
-                src="/images/funfetti-cake.webp"
+                src="/awaken/images/funfetti-cake.webp"
                 alt="Awaken Bakery 100% gluten-free custom celebration cake"
               />
             </div>

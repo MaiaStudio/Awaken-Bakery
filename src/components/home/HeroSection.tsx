@@ -90,7 +90,7 @@ export function HeroSection() {
         <div ref={bgRef} className="Hero_Back_Img Parallax_Back_Hero">
           <img
             ref={imgRef}
-            src="/images/hero-bakery.jpg"
+            src="/awaken/images/hero-bakery.jpg"
             alt="Awaken Bakery 100% gluten-free freshly baked cakes, cookies, and treats in Bowling Green, KY"
             fetchPriority="high"
             decoding="sync"

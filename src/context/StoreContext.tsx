@@ -348,7 +348,7 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
 
       if (targetPath === currentPath) {
         if (rawHash) {
-          window.history.replaceState(null, "", `${currentPath}#${rawHash}`);
+          window.history.replaceState(null, "", `${window.location.pathname}#${rawHash}`);
           scrollToHash(`#${rawHash}`);
         } else if (lenisRef.current) {
           lenisRef.current.scrollTo(0);

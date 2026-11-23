@@ -2836,14 +2836,14 @@ export function getProductBySlug(slug: string): ProductItem | undefined {
 export const FEATURED_PRODUCTS = PRODUCTS.filter((p) => p.featured);
 
 export const ARCH_GALLERY = [
-  { src: "/images/funfetti-cake.webp", alt: "Funfetti Birthday Cake — 100% Gluten Free", tall: true },
-  { src: "/images/bagel-scene.webp", alt: "California Avocado Bagel Sandwich", tall: false },
-  { src: "/images/chocolate-cake.webp", alt: "Chocolate Decadence Layer Cake", tall: true },
-  { src: "/images/artisan-bread.webp", alt: "Fresh Baked Gluten-Free Artisan Bread Loaves", tall: false },
-  { src: "/images/lemon-cupcakes.jpg", alt: "Hand-Frosted Gluten-Free Lemon Cupcakes", tall: true },
-  { src: "/images/cookies-assorted.jpg", alt: "Soft-Baked Assorted Gluten-Free Cookies", tall: false },
-  { src: "/images/storefront.webp", alt: "Awaken Bakery Storefront in Downtown Bowling Green", tall: true },
-  { src: "/images/story-bakery-2.jpg", alt: "Inside Awaken Bakery Cafe", tall: false },
+  { src: "/awaken/images/funfetti-cake.webp", alt: "Funfetti Birthday Cake — 100% Gluten Free", tall: true },
+  { src: "/awaken/images/bagel-scene.webp", alt: "California Avocado Bagel Sandwich", tall: false },
+  { src: "/awaken/images/chocolate-cake.webp", alt: "Chocolate Decadence Layer Cake", tall: true },
+  { src: "/awaken/images/artisan-bread.webp", alt: "Fresh Baked Gluten-Free Artisan Bread Loaves", tall: false },
+  { src: "/awaken/images/lemon-cupcakes.jpg", alt: "Hand-Frosted Gluten-Free Lemon Cupcakes", tall: true },
+  { src: "/awaken/images/cookies-assorted.jpg", alt: "Soft-Baked Assorted Gluten-Free Cookies", tall: false },
+  { src: "/awaken/images/storefront.webp", alt: "Awaken Bakery Storefront in Downtown Bowling Green", tall: true },
+  { src: "/awaken/images/story-bakery-2.jpg", alt: "Inside Awaken Bakery Cafe", tall: false },
 ];
 
 export const REVIEWS: ReviewItem[] = [
@@ -2958,7 +2958,7 @@ export const STORY_MILESTONES: StoryMilestone[] = [
       "In 2011, founder Tiana Post was diagnosed with celiac disease. Suddenly, food wasn't simple anymore. Birthday parties became complicated, eating out became stressful, and grabbing a cupcake at a bakery wasn't safe.",
       "A decade later in 2021 came a Lyme disease diagnosis — another season of healing and a deep reminder that what we put in our bodies matters. Every loaf, sandwich, and cupcake at Awaken is made with someone in mind who has just been told 'you can't eat that anymore.'",
     ],
-    image: "/images/story-tiana.png",
+    image: "/awaken/images/story-tiana.png",
     imageAlt: "Tiana Post, founder of Awaken Bakery",
   },
   {
@@ -2969,7 +2969,7 @@ export const STORY_MILESTONES: StoryMilestone[] = [
       "After leaving a career in website design and marketing to homeschool Wyatt and Layla — with husband Rich cheering every step — Tiana set up a simple folding table at the Community Farmers Market in Bowling Green with cupcakes, hope, and not much else.",
       "Every Saturday, women would stop in their tracks: 'I haven't had a cupcake in years.' 'My daughter has never had a real birthday cake.' That was the heartbeat of Awaken from day one.",
     ],
-    image: "/images/story-market.jpg",
+    image: "/awaken/images/story-market.jpg",
     imageAlt: "Awaken Bakery early days at the Community Farmers Market",
   },
   {
@@ -2980,7 +2980,7 @@ export const STORY_MILESTONES: StoryMilestone[] = [
       "The booth grew to a real bakery case. Cupcakes started selling out early every Saturday morning as regulars lined up hoping their favorite flavor was still waiting.",
       "Rich built, hauled, and worked side-by-side while the kids found their rhythm. It was a true family business — and God began preparing the family for a permanent home and a new name: Awaken Bakery.",
     ],
-    image: "/images/story-bakery-1.jpg",
+    image: "/awaken/images/story-bakery-1.jpg",
     imageAlt: "Awaken Bakery fresh pastries and growing bakery case",
   },
   {
@@ -2991,7 +2991,7 @@ export const STORY_MILESTONES: StoryMilestone[] = [
       "After two years at the farmers market, Awaken Bakery officially opened its first downtown Bowling Green storefront — a 100% dedicated gluten-free kitchen with zero risk of cross-contamination.",
       "We weren't just opening a bakery. We were waking people up to the idea that gluten free can be truly good. Not 'good for gluten free.' Just good. Period.",
     ],
-    image: "/images/story-opening.jpg",
+    image: "/awaken/images/story-opening.jpg",
     imageAlt: "Opening day at Awaken Bakery in Bowling Green, KY",
   },
   {
@@ -3002,7 +3002,7 @@ export const STORY_MILESTONES: StoryMilestone[] = [
       "Just over a year after opening, we moved a few doors down to our current bright, welcoming home at 300 E Main Ave — complete with a bigger kitchen, cozy café seating, espresso bar, and free customer parking right out front.",
       "In 2024, Bowling Green voted us Best of Bowling Green — and a portion of every order supports community work fighting for high-risk and exploited youth across Kentucky.",
     ],
-    image: "/images/storefront.webp",
+    image: "/awaken/images/storefront.webp",
     imageAlt: "Awaken Bakery downtown storefront at 300 E Main Ave",
   },
 ];
@@ -3104,7 +3104,7 @@ export const TAKE_AND_BAKE_GUIDES: InstructionGuide[] = [
     title: "Pie Crust & Holiday Stuffing",
     badge: "Holiday Staples",
     summary: "Our 9\" flaky take-and-bake pie crust and 9×9 homemade gluten-free stuffing make holiday cooking effortless and 100% celiac safe.",
-    image: "/images/holiday-thanksgiving.webp",
+    image: "/awaken/images/holiday-thanksgiving.webp",
     steps: [
       {
         heading: "Pie Crust & Stuffing Tips",
@@ -3124,7 +3124,7 @@ export const BREAD_CARE_GUIDES: InstructionGuide[] = [
     badge: "2–3 Days Counter",
     counterShelfLife: "Stays fresh on the countertop for 2–3 days after purchase.",
     summary: "Slice before freezing so you can pull warm bakery toast or soft sandwiches anytime.",
-    image: "/images/artisan-bread.webp",
+    image: "/awaken/images/artisan-bread.webp",
     steps: [
       {
         heading: "Freezing Slices",
@@ -3167,7 +3167,7 @@ export const BREAD_CARE_GUIDES: InstructionGuide[] = [
     badge: "2 Days Counter",
     counterShelfLife: "Best enjoyed fresh within 2 days on the countertop, then freeze.",
     summary: "Steam-revive in seconds or butter-toast in a skillet or air fryer for restaurant-grade texture.",
-    image: "/images/bagel-scene.webp",
+    image: "/awaken/images/bagel-scene.webp",
     steps: [
       {
         heading: "Soft & Steamy Revival",

@@ -39,7 +39,7 @@ export default function HolidayPage() {
             <div>
               <div className="aspect-square rounded-[50%_50%_1.5rem_1.5rem] overflow-hidden mb-6 bg-[#f2dec4]">
                 <img
-                  src="/images/holiday-christmas.webp"
+                  src="/awaken/images/holiday-christmas.webp"
                   alt="Awaken Bakery Gluten-Free Christmas Pre-Orders"
                   className="w-full h-full object-cover"
                 />
@@ -86,7 +86,7 @@ export default function HolidayPage() {
             <div>
               <div className="aspect-square rounded-[50%_50%_1.5rem_1.5rem] overflow-hidden mb-6 bg-[#f2dec4]">
                 <img
-                  src="/images/holiday-thanksgiving.webp"
+                  src="/awaken/images/holiday-thanksgiving.webp"
                   alt="Awaken Bakery Gluten-Free Thanksgiving Pies & Stuffing"
                   className="w-full h-full object-cover"
                 />
@@ -196,7 +196,7 @@ export default function HolidayPage() {
           <div className="lg:col-span-5 flex justify-center">
             <div className="w-72 rounded-[2.6rem] overflow-hidden border-8 border-[#4f515e] shadow-2xl">
               <img
-                src="/images/app-mockup.jpg"
+                src="/awaken/images/app-mockup.jpg"
                 alt="Awaken Bakery mobile ordering & rewards app"
                 className="w-full h-auto object-cover"
               />

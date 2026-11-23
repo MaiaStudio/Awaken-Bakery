@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     title: "Awaken Bakery | 100% Gluten-Free Bakery in Bowling Green, KY",
     description:
       "100% dedicated gluten-free & celiac-safe bakery in downtown Bowling Green, KY. Cakes, cookies, cupcakes, artisan loaves, take & bake, and nationwide shipping.",
-    images: ["/images/hero-bakery.jpg"],
+    images: ["/awaken/images/hero-bakery.jpg"],
   },
   twitter: {
     card: "summary_large_image",

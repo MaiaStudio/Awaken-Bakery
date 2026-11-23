@@ -1,6 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // served at maiacoelho.design/awaken (proxied by maiacoelho-buck); public assets need the prefix too
+  basePath: "/awaken",
   images: {
     unoptimized: true,
     remotePatterns: [
