@@ -341,7 +341,6 @@ h1.SectionTitle {
 svg.pagehide,
 svg.pageload {
   width: 100vw;
-  height: auto;
   position: fixed;
   left: 0;
   z-index: 20000;
@@ -352,10 +351,12 @@ svg.pageload {
 
 svg.pagehide {
   bottom: 0;
+  height: 145dvh;
 }
 
 svg.pageload {
   top: 0;
+  height: 105dvh;
 }
 
 .overlay {

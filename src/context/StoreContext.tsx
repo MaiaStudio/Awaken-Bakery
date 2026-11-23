@@ -22,6 +22,7 @@ export interface CartItem {
 }
 
 type CrumbEmitter = (x: number, y: number, size: number, color: string) => void;
+type PageTransitionRunner = (onCovered: () => void) => void;
 
 interface StoreContextValue {
   items: CartItem[];
@@ -47,9 +48,9 @@ interface StoreContextValue {
   registerCrumbEmitter: (fn: CrumbEmitter | null) => void;
   triggerCrumbsFromElement: (el: HTMLElement | null) => void;
   registerLenis: (lenis: Lenis | null) => void;
+  registerTransitionRunner: (fn: PageTransitionRunner | null) => void;
   scrollToHash: (hash: string) => void;
   navigateWithTransition: (href: string) => void;
-  isPageHiding: boolean;
 }
 
 const StoreContext = createContext<StoreContextValue | null>(null);
@@ -129,13 +130,11 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isOverDarkHero, setIsOverDarkHero] = useState(pathname === "/");
   const [toastMessage, setToastMessage] = useState<string | null>(null);
-  const [isPageHiding, setIsPageHiding] = useState(false);
 
   const crumbEmitterRef = useRef<CrumbEmitter | null>(null);
   const lenisRef = useRef<Lenis | null>(null);
+  const transitionRunnerRef = useRef<PageTransitionRunner | null>(null);
   const toastTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const navTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const navSafetyTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const hasHydratedCartRef = useRef(false);
 
   // Hydrate cart once from sessionStorage with schema validation
@@ -177,8 +176,6 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     return () => {
       if (toastTimerRef.current) clearTimeout(toastTimerRef.current);
-      if (navTimerRef.current) clearTimeout(navTimerRef.current);
-      if (navSafetyTimerRef.current) clearTimeout(navSafetyTimerRef.current);
     };
   }, []);
 
@@ -196,14 +193,9 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
 
   // Reset UI drawers, hero state, and scroll (respecting cross-page #hash targets)
   useEffect(() => {
-    setIsPageHiding(false);
     setIsSearchOpen(false);
     setIsMobileMenuOpen(false);
     setIsOverDarkHero(pathname === "/");
-    if (navSafetyTimerRef.current) {
-      clearTimeout(navSafetyTimerRef.current);
-      navSafetyTimerRef.current = null;
-    }
 
     const hash = typeof window !== "undefined" ? window.location.hash : "";
     if (hash) {
@@ -325,6 +317,10 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
     lenisRef.current = lenis;
   }, []);
 
+  const registerTransitionRunner = useCallback((fn: PageTransitionRunner | null) => {
+    transitionRunnerRef.current = fn;
+  }, []);
+
   const navigateWithTransition = useCallback(
     (href: string) => {
       if (href.startsWith("http") || href.startsWith("mailto:") || href.startsWith("tel:")) {
@@ -338,16 +334,21 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
         return;
       }
 
-      // Parse target pathname & hash to avoid locking curtain on same-route hash/query links
+      // Parse target pathname, query & hash to avoid triggering curtain on same-pathname links
       const [rawPath, rawHash] = href.split("#");
-      const targetPath = (rawPath.split("?")[0] || "/").replace(/\/+$/, "") || "/";
+      const [pathOnly, rawQuery = ""] = rawPath.split("?");
+      const targetPath = (pathOnly || "/").replace(/\/+$/, "") || "/";
       const currentPath = (pathname || "/").replace(/\/+$/, "") || "/";
+      const currentQuery =
+        typeof window !== "undefined" ? window.location.search.replace(/^\?/, "") : "";
 
       setIsMobileMenuOpen(false);
       setIsSearchOpen(false);
 
       if (targetPath === currentPath) {
-        if (rawHash) {
+        if (rawQuery !== currentQuery) {
+          router.push(href);
+        } else if (rawHash) {
           window.history.replaceState(null, "", `${window.location.pathname}#${rawHash}`);
           scrollToHash(`#${rawHash}`);
         } else if (lenisRef.current) {
@@ -362,22 +363,15 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
         typeof window !== "undefined" &&
         window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-      if (prefersReduced) {
+      if (prefersReduced || !transitionRunnerRef.current) {
         router.push(href);
         return;
       }
 
-      if (navTimerRef.current) clearTimeout(navTimerRef.current);
-      if (navSafetyTimerRef.current) clearTimeout(navSafetyTimerRef.current);
-
-      setIsPageHiding(true);
-      navTimerRef.current = setTimeout(() => {
+      // Delegate to SmoothScrollProvider so router.push fires ONLY on GSAP onComplete
+      transitionRunnerRef.current(() => {
         router.push(href);
-      }, 420);
-      // Safety reset in case navigation is cancelled or identical
-      navSafetyTimerRef.current = setTimeout(() => {
-        setIsPageHiding(false);
-      }, 2500);
+      });
     },
     [pathname, router, scrollToHash]
   );
@@ -417,9 +411,9 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
       registerCrumbEmitter,
       triggerCrumbsFromElement,
       registerLenis,
+      registerTransitionRunner,
       scrollToHash,
       navigateWithTransition,
-      isPageHiding,
     }),
     [
       items,
@@ -444,9 +438,9 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
       registerCrumbEmitter,
       triggerCrumbsFromElement,
       registerLenis,
+      registerTransitionRunner,
       scrollToHash,
       navigateWithTransition,
-      isPageHiding,
     ]
   );
 
